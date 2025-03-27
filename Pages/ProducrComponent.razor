@@ -1,0 +1,23 @@
+﻿@page "/Product"
+<PageTitle>Product</PageTitle>
+<h3>ProducrComponent</h3>
+<select class="form form-control" @bind="productId" @bind:event="oninput"
+@onchange="getproduct"
+>
+    @foreach(var item in ListProducts){
+        <option value="@item.Id">@item.Name</option>
+
+    }
+  
+
+</select>
+
+<div class="card shadow-sm rounded" style="width: 20rem; margin-top: 20px;">
+    <img src="@prod?.imgUrl" >
+    <div class="card-body text-center">
+        <h5 class="card-title text-primary">@prod?.Name</h5>
+        <p class="card-text fw-bold">Price: $@prod?.Price</p>
+        <p class="card-text text-muted">Product ID: @prod?.Id</p>
+    </div>
+</div>
+

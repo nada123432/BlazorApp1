@@ -1,0 +1,19 @@
+﻿@page "/dept"
+
+<h3>DepartmentComponent</h3>
+<PageTitle>DepartmentComponent</PageTitle>
+
+<select class="form form-control" @bind="deptId" @bind:event="oninput"
+@onchange="getdept"
+>
+    @foreach(var item in ListDepts)
+    {
+        <option value="@item.Id">
+            @item.Name
+        </option>
+    }
+   
+    
+</select>
+<h3>@dept?.Name</h3>
+<h3>@dept?.ManagerName</h3>

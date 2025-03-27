@@ -1,0 +1,19 @@
+﻿@page "/First"
+<h3>FirstComponent</h3>
+<PageTitle>FirstComponent</PageTitle>
+<input  class="btn btn-success" value="Display message" @onclick='()=>click("hello")'/>
+<h1>@message</h1>
+<input  value="@message"/>
+
+<h2>two-way-binding</h2>
+<input @bind-value="@message" @bind-value:event="onchange" />
+<h2>two-way-binding update</h2>
+<input @bind-value="@message" @bind-value:event="oninput" />
+
+@code {
+    public string message { get; set; } = "hello";
+
+    public void click(string msg){
+        message = "change on click";
+    }
+}
